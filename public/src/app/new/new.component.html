@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Add New</title>
+</head>
+<body>
+    <div class="component">
+            <h3 style="text-align: center; color: #666">Know of a pet needing a home?</h3>
+        <div class="form">
+        <form (submit)="petSubmit()">
+            <h3>Pet Name:</h3>
+            <p class="small text-danger" *ngIf="err?.name?.message">{{err?.name?.message}}</p>
+            <input type="text" class="form-control"  name="newPet.name" [(ngModel)]="newPet.name">
+            <br>
+            <h3>Pet Type:</h3>
+            <p class="small text-danger" *ngIf="err?.type?.message">{{err?.type?.message}}</p>
+            <input type="text" class="form-control"  name="newPet.type" [(ngModel)]="newPet.type">
+            <br>
+            <h3>Description:</h3>
+            <p class="small text-danger" *ngIf="err?.description?.message">{{err?.description?.message}}</p>
+            <input type="text" class="form-control"  name="newPet.description" [(ngModel)]="newPet.description">
+            <br>
+            <h3>Skills</h3>
+            <label for="skillOne">Skill 1:</label>
+            <input type="text" class="form-control"  name="newPet.skillOne" [(ngModel)]="newPet.skillOne">
+            <br>
+            <label for="skillTwo">Skill 2:</label>
+            <input type="text" class="form-control"  name="newPet.skillTwo" [(ngModel)]="newPet.skillTwo">
+            <br>
+            <label for="skillThree">Skill 3:</label>
+            <input type="text" class="form-control"  name="newPet.skillThree" [(ngModel)]="newPet.skillThree">
+            <br>
+            <input class="btn btn-success" type="submit" value="Add Pet">
+            <button class="btn btn-primary ml-3" [routerLink]="['/pets']">Cancel</button>
+        </form>
+    </div>
+
+    </div>
+</body>
+</html>

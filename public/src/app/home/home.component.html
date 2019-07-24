@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body>
+    <div class="component">
+      <h3>These pets are looking for a home!</h3>
+      <a [routerLink]="['/pets','new']"><h4>Add a new pet to the shelter</h4></a>
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Actions Available</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pet of pets; let idx = index">
+            <td>{{pet.name}}</td>
+            <td>{{pet.type}}</td>
+            <td><button class="btn btn-warning" [routerLink]="['edit', pet._id]">Edit</button>
+              <a [routerLink]="['details', pet._id]"><button class="btn btn-secondary ml-2">Details</button></a>
+              <!-- <button class="btn btn-danger ml-2" (click)="deletePet(pet._id)">Delete</button> -->
+            </td>
+           </tr>
+        </tbody>
+      </table> 
+    </div>
+    
+</body>
+</html>

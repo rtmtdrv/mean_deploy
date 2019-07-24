@@ -1,0 +1,17 @@
+.container {
+    margin-top: 10px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.title {
+    display: inline-block;
+}
+
+.homelink {
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+}

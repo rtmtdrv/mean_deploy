@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Details</title>
+</head>
+<body>
+    <div class="component">
+        <div class="info">
+            <h1>Details about "{{ pet?.name }}"</h1>
+            <h3>Pet type: <span class="font-weight-light">{{ pet?.type }}</span></h3>
+            <h3>Description: <span class="font-weight-light">{{ pet?.description }}</span></h3>
+            <h3>Skills: <span class="font-weight-light">{{ pet?.skillOne }}<span *ngIf="pet?.skillTwo">, {{ pet?.skillTwo }}</span><span *ngIf="pet?.skillThree">, {{ pet?.skillOne }}</span></span></h3>
+            <h3>Likes: <span class="font-weight-light">{{ pet?.likes }}</span></h3>
+            <button class="btn btn-primary mt-2" *ngIf="liked==false" (click)="likeButtonClick()" >Like this Pet</button>
+            <button class="btn btn-primary mt-2" *ngIf="liked==true" disabled="disabled">Liked this Pet</button>
+            <button class="btn btn-danger ml-3 mt-2" (click)="deletePet(pet._id)">Adopt This Pet</button>
+        </div>
+    </div>
+    
+</body>
+</html>

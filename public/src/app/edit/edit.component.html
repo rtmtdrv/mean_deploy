@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Add New</title>
+</head>
+<body>
+    <div class="component">
+        <h3 style="text-align: center; color: #666">Edit this pet</h3>
+        <div class="form">
+        <form (submit)="editSubmit()">
+            <h3>Pet Name:</h3>
+            <p class="small text-danger" *ngIf="err?.name?.message">{{err?.name?.message}}</p>
+            <input type="text" class="form-control" name="name" [(ngModel)]="editPet.name" [value]="editPet.name">
+            <br>
+            <h3>Pet Type:</h3>
+            <p class="small text-danger" *ngIf="err?.type?.message">{{err?.type?.message}}</p>
+            <input type="text" class="form-control" name="type" [(ngModel)]="editPet.type" [value]="editPet.type">
+            <br>
+            <h3>Description:</h3>
+            <p class="small text-danger" *ngIf="err?.description?.message">{{err?.description?.message}}</p>
+            <input type="text" class="form-control" name="description" [(ngModel)]="editPet.description" [value]="editPet.description">
+            <br>
+            <h3>Skills</h3>
+            <label for="skillOne">Skill 1:</label>
+            <input type="text" class="form-control" name="skillOne" [(ngModel)]="editPet.skillOne" [value]="editPet.skillOne">
+            <br>
+            <label for="skillTwo">Skill 2:</label>
+            <input type="text" class="form-control" name="skillTwo" [(ngModel)]="editPet.skillTwo" [value]="editPet.skillTwo">
+            <br>
+            <label for="skillThree">Skill 3:</label>
+            <input type="text" class="form-control" name="skillThree" [(ngModel)]="editPet.skillThree" [value]="editPet.skillThree">
+            <br>
+            <input class="btn btn-success" type="submit" value="Edit Pet">
+            <button class="btn btn-primary ml-3" [routerLink]="['/pets']">Cancel</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
